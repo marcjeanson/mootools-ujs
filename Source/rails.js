@@ -8,7 +8,7 @@ authors:
 - Kevin Valdek
 
 requires:
-  core/1.2.4: '*'
+  core/1.3.0: '*'
 
 provides:
   - Rails 3 MooTools driver
@@ -119,7 +119,7 @@ window.addEvent('domready', function() {
 
     initialize: function(element, options) {
       this.el = element;
-      this.parent($merge({
+      this.parent(Object.merge({
         method: this.el.get('method') || this.el.get('data-method') || 'get',
         url: this.el.get('action') || this.el.get('href')
       }, options));
@@ -160,8 +160,3 @@ window.addEvent('domready', function() {
 
 })(document.id);
 
-/**
- * MooTools selector engine does not match data-* attributes.
- * This will be fixed in 1.3, when the engine is swapped for Slick.
- */
-Selectors.RegExps.combined = (/\.([\w-]+)|\[([\w-]+)(?:([!*^$~|]?=)(["']?)([^\4]*?)\4)?\]|:([\w-]+)(?:\(["']?(.*?)?["']?\)|$)/g);
