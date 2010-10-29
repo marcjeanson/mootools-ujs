@@ -123,7 +123,7 @@ window.addEvent('domready', function() {
         method: this.el.get('method') || this.el.get('data-method') || 'get',
         url: this.el.get('action') || this.el.get('href')
       }, options));
-      this.headers.Accept = '*/*';
+      this.headers.Accept = 'text/javascript, application/javascript, */*';
 
       this.addRailsEvents();
     },
